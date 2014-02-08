@@ -3,7 +3,7 @@
   "description": "Adds basic support for rss feed v2.0",
   "homepage": "https://github.com/raix/Meteor-rssfeed",
   "author": "Morten Henriksen  (http://gi-software.com)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "git": "https://github.com/raix/Meteor-rssfeed.git",
   "packages": {
   }
