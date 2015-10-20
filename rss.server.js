@@ -97,7 +97,7 @@ RssFeed = {
 
 // Handle the actual connection
 WebApp.connectHandlers.use(function(req, res, next) {
-  rssurl = /^\/rss/gi;
+  rssurl = /^\/rss\//gi;
 
   if (!rssurl.test(req.url)) {
     return next();
