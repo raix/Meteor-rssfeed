@@ -1,14 +1,14 @@
-raix:rssfeed
-============
+# raix:rssfeed
+
 A package for serving data in RSS 2.0 XML format for Meteor
 
-### What is it?
+## What is it?
 
 It serves published data mounted on `http://mysite.meteor.com/rss/name`
 
 or with a querystring `http://mysite.meteor.com/rss/news?foo=latest`
 
-### How?
+## How?
 
 Add the package
 ```
@@ -17,8 +17,9 @@ Add the package
 
 Publish a feed
 ```js
-RssFeed.publish('test', function(query) {
+RssFeed.publish('name', function(query) {
   var self = this;
+  
   // We got 3 helpers:
   // 1. self.setValue
   // 2. self.addItem
@@ -36,7 +37,6 @@ RssFeed.publish('test', function(query) {
   self.setValue('lastBuildDate', new Date());
   self.setValue('pubDate', new Date());
   self.setValue('ttl', 1);
-  // managingEditor, webMaster, language, docs, generator
 
   newsCollection.find({}).forEach(function(doc) {
     self.addItem({
@@ -44,22 +44,22 @@ RssFeed.publish('test', function(query) {
       description: doc.text,
       link: 'http://mysite.meteor.com',
       pubDate: new Date()
-      // title, description, link, guid, pubDate
     });
   });
 
 });
 ```
 
-### API
+## API
 * RssFeed.publish: function(name, handlerFunction)
 * RssFeed.unpublish: function(name)
-##### Internal
+
+### Internal
 * RssFeed.createTag: function(key, value)
 * RssFeed.cdataValue: function(value)
 * RssFeed.objectToXML: function(sourceObject)
 
-#### this in publish feed handler helpers
+### 'this' in publish feed handler helpers
 * this.cdata: RssFeed.cdataValue
 * this.setValue: function(key, value)
 * this.addItem: function(itemObject)
