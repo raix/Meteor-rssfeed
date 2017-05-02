@@ -38,11 +38,11 @@ RssFeed.publish('name', function(query) {
   self.setValue('pubDate', new Date());
   self.setValue('ttl', 1);
 
-  newsCollection.find({}).forEach(function(doc) {
+  DocsCollection.find({}).forEach(function(doc) {
     self.addItem({
       title: doc.name,
       description: doc.text,
-      link: 'http://mysite.meteor.com',
+      link: 'http://mysite.com',
       pubDate: new Date()
     });
   });
