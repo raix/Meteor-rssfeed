@@ -6,7 +6,7 @@ A package for serving data in RSS 2.0 XML format for Meteor
 
 It serves published data mounted on `http://mysite.meteor.com/rss/name`
 
-or with a querystring `http://mysite.meteor.com/rss/news?foo=latest`
+or with a querystring `http://mysite.meteor.com/rss/name?foo=latest`
 
 ## How?
 
