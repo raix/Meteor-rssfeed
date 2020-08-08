@@ -1,3 +1,5 @@
+# DEPRECATED: No longer maintained
+
 # raix:rssfeed
 
 A package for serving data in RSS 2.0 XML format for Meteor
